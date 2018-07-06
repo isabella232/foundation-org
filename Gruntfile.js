@@ -9,7 +9,8 @@ var vendor = [
   'public/js/jquery.scrollme.min.js',
   'public/js/bitcoinjs-min.js',
   'public/js/numeral.js',
-  'public/js/jquery.tableofcontents.min.js'
+  'public/js/jquery.tableofcontents.min.js',
+  'node_modules/slick-carousel/slick/slick.js'
 ];
 
 var styles = ['bootstrap.min.css', 'font-awesome.min.css', 'style.css'];
