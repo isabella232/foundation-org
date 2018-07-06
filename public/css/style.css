@@ -1929,3 +1929,83 @@ p.cookie_pol {
 	opacity: 1 !important;
 	content: '' !important;
 }
+
+.header {
+	background-color: rgba(0, 0, 0, 0.1);
+	width: 100%;
+	height: 80px;
+	z-index: 990;
+	position: absolute;
+	top: 0;
+	box-shadow: 0 1px 3px rgba(0,0,0,0);
+	transition: background-color 300ms linear;
+}
+
+.header-container {
+	width: 100%;
+	height: 80px;
+	display: table;
+}
+
+.p-40 {
+	width: 40px;
+}
+
+.header-left {
+	min-width: 330px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.header-left img {
+    margin-right: 30px;
+    max-width: 300px;
+    width: 300px;
+    height: auto;
+    display: block;
+}
+
+.header-center {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 100%;
+}
+
+.header-right {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+}
+
+.header-right-container {
+	display: table;
+	text-align: right;
+	width: auto;
+	position: relative;
+	float: right;
+}
+
+.right-langs {
+	padding-left: 30px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.right-langs-lang {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 10px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: #202326;
+	word-break: keep-all;
+}
+
+.right-langs-lang a {
+	color: #ffffff;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
