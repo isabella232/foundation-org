@@ -2065,3 +2065,54 @@ ul.menu-list li:last-child {
 	text-transform: uppercase;
 	text-decoration: none;
 }
+
+.about-us {
+	padding-top: 90px;
+	padding-bottom: 120px;
+	background-color: #eee;
+	font-family: 'Montserrat',sans-serif;
+}
+
+.about-us .title {
+	font-weight: 600;
+	color: #202326;
+	margin-bottom: 25px;
+	font-size: 64px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.about-us .description {
+	font-family: 'Montserrat',sans-serif;
+	font-weight: 400;
+	color: #202326;
+	font-size: 20px;
+	text-align: center;
+	line-height: 1.55;
+}
+
+.about-us .video {
+	margin-top: 50px;
+	height: 540px;
+}
+
+@media screen and (max-width: 1200px) {
+	.about-us .title {
+		font-size: 60px;
+	}
+
+	.about-us .description {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.about-us .title {
+		font-size: 30px;
+	}
+
+	.about-us .description {
+		font-size: 16px;
+		line-height: 1.45;
+	}
+}
