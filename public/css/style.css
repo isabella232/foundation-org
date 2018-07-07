@@ -1676,17 +1676,17 @@ p.cookie_pol {
 	width: 100%;
 }
 
-.menu-list ul {
+ul.menu-list {
 	list-style-type: none;
 	padding: 0 !important;
 	margin: 0 !important;
 }
 
-.menu-list ul li {
+ul.menu-list li {
 	clear: both;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
-	display: inline;
+	display: inline-block;
 	padding-left: 16px;
 	padding-right: 16px;
 	margin: 0;
@@ -1694,7 +1694,7 @@ p.cookie_pol {
 	white-space: nowrap;
 }
 
-.menu-list ul li a {
+ul.menu-list li a {
 	color: #ffffff;
 	font-weight: 500;
 	letter-spacing: 1px;
@@ -1705,12 +1705,12 @@ p.cookie_pol {
 	position: relative;
 }
 
-.menu-list ul li a:not(.t-active):not(.tooltipstered):hover::after {
+ul.menu-list li a:not(.t-active):not(.tooltipstered):hover::after {
 	opacity: 1;
 	bottom: -0px;
 }
 
-.menu-list ul li a::after {
+ul.menu-list li a::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -1726,11 +1726,11 @@ p.cookie_pol {
 	transition: all 0.2s ease;
 }
 
-.menu-list ul li:first-child {
+ul.menu-list li:first-child {
 	padding-left: 0;
 }
 
-.menu-list ul li:last-child {
+ul.menu-list li:last-child {
 	padding-right: 0;
 }
 
@@ -1939,6 +1939,62 @@ p.cookie_pol {
 	top: 0;
 	box-shadow: 0 1px 3px rgba(0,0,0,0);
 	transition: background-color 300ms linear;
+	padding: 0 40px;
+}
+
+@media screen and (max-width: 980px) {
+    .header {
+        position: static;
+        text-align: center;
+        display: block;
+        margin: 0;
+        padding: 0;
+        height: auto !important;
+		background-color: rgb(0, 0, 0);
+    }
+
+	.header-left,
+	.header-center,
+	.header-right {
+		display: block !important;
+		text-align: center;
+		float: none;
+		padding: 20px 0;
+	}
+
+	.header-left {
+		padding: 20px;
+	}
+
+	.header-left img {
+		padding: 20px 0;
+		width: 100% !important;
+		float: inherit;
+		margin: 0 auto !important;
+	}
+
+	ul.menu-list li {
+		display: block !important;
+		text-align: center;
+		padding: 10px !important;
+		white-space: normal;
+	}
+
+	.header-right-container {
+		display: table;
+		position: static !important;
+		float: none !important;
+		text-align: center;
+		margin: 0 auto;
+		padding: 20px 0;
+	}
+
+	.right-langs {
+		display: table;
+		padding: 10px 0 !important;
+		margin: 0 auto;
+		text-align: center;
+	}
 }
 
 .header-container {
@@ -2004,7 +2060,7 @@ p.cookie_pol {
 
 .right-langs-lang a {
 	color: #ffffff;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	text-decoration: none;
