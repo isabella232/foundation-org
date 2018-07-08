@@ -1859,7 +1859,7 @@ ul.menu-list li:last-child {
 	bottom: 0;
 	width: 15%;
 	cursor: pointer;
-	z-index: 15;
+	z-index: 999;
 }
 
 .arrow.arrow-left {
@@ -1995,6 +1995,10 @@ ul.menu-list li:last-child {
 		margin: 0 auto;
 		text-align: center;
 	}
+
+	.introduction, .bg {
+		height: 826px !important;
+	}
 }
 
 .header-container {
@@ -2115,4 +2119,12 @@ ul.menu-list li:last-child {
 		font-size: 16px;
 		line-height: 1.45;
 	}
+}
+
+.slick-track {
+	left: -15px !important;
+}
+
+.slick-dots {
+	left: 0 !important;
 }
