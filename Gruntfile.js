@@ -227,7 +227,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-http');
 
   grunt.registerTask('default', [
-    'http',
+    // 'http',
     'clean',
     'pug',
     'copy',
