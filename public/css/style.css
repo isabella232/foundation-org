@@ -63,7 +63,8 @@ html {
 
 body {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', arial, sans-serif;
-	background: #102026;
+	background: #fff;
+	overflow-x: hidden;
 }
 
 hr {
@@ -1134,450 +1135,6 @@ div#donate_inst {
 	width: 100%;
 }
 
-/* ==========================================
-  @2x assets
-  ======================================== */
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-	.recipe {
-		background-image: url("../images/recipe-bg@2x.png");
-		background-size: 8px 12px;
-	}
-
-	figure.ethereum-network {
-		background-image: url("../images/ethereum-network-outline@2x.png");
-	}
-
-	figure.wallet .wallet-start {
-		background-image: url("../images/wallet-start@2x.png");
-	}
-
-	figure.wallet .wallet-create {
-		background-image: url("../images/wallet-create@2x.png");
-	}
-
-	figure.wallet .wallet-confirm {
-		background-image: url("../images/wallet-confirm@2x.png");
-	}
-
-	figure.geth-console {
-		background-image: url("../images/console@2x.gif");
-	}
-
-	figure.geth .geth-background {
-		background-image: url("../images/geth@2x.png");
-	}
-
-	figure.geth .geth-logo {
-		background-image: url("../images/geth-foreground@2x.gif");
-	}
-
-	figure.ether .ether-screen {
-		background-image: url("../images/ether-screen@2x.gif");
-	}
-
-	figure.ether .ether-pacman {
-		background-image: url("../images/ether-pacman@2x.gif");
-	}
-
-	figure.ether .ether-coin {
-		background-image: url("../images/ether-coin@2x.png");
-	}
-
-	figure.ether .ether-arcade-front {
-		background-image: url("../images/ether-arcade-front@2x.png");
-	}
-
-	figure.ether .ether-arcade-back {
-		background-image: url("../images/ether-arcade-back@2x.png");
-	}
-
-	figure.greeter .greeter-human {
-		background-image: url("../images/greeter-human@2x.png");
-	}
-
-	figure.greeter .greeter-robot {
-		background-image: url("../images/greeter-robot@2x.png");
-	}
-
-	figure.greeter .greeter-question {
-		background-image: url("../images/greeter-question@2x.png");
-	}
-
-	figure.greeter .greeter-answer {
-		background-image: url("../images/greeter-answer@2x.png");
-	}
-
-	figure.coin .coin-connection {
-		background-image: url("../images/token-connection@2x.png");
-	}
-
-	figure.coin .coin-users {
-		background-image: url("../images/token-users@2x.png");
-	}
-
-	figure.coin .coin-coins {
-		background-image: url("../images/token-coins@2x.png");
-	}
-
-	figure.coin .coin-send {
-		background-image: url("../images/token-send@2x.png");
-	}
-
-	figure.crowdsale .crowdsale-logic {
-		background-image: url("../images/crowdsale-logic@2x.png");
-	}
-
-	figure.crowdsale .crowdsale-robot {
-		background-image: url("../images/crowdsale-robot@2x.png");
-	}
-
-	figure.crowdsale .crowdsale-money {
-		background-image: url("../images/crowdsale-money@2x.png");
-	}
-
-	figure.crowdsale .crowdsale-contributions {
-		background-image: url("../images/crowdsale-contributions@2x.png");
-	}
-
-	figure.crowdsale .crowdsale-crowd {
-		background-image: url("../images/crowdsale-crowd@2x.png");
-	}
-
-	figure.dao .dao-robot {
-		background-image: url("../images/dao-robot@2x.png");
-	}
-
-	figure.dao .dao-money {
-		background-image: url("../images/dao-money@2x.png");
-	}
-
-	figure.dao .dao-arrows {
-		background-image: url("../images/dao-arrows@2x.png");
-	}
-
-	figure.dao .dao-ideas {
-		background-image: url("../images/dao-ideas@2x.png");
-	}
-
-	figure.dao .dao-crowd {
-		background-image: url("../images/dao-crowd@2x.png");
-	}
-
-	figure.moon .moon-stars {
-		background-image: url("../images/moon-stars@2x.png");
-	}
-
-	figure.moon .moon-moon {
-		background-image: url("../images/moon-moon@2x.png");
-	}
-
-	figure.moon .moon-rocket {
-		background-image: url("../images/moon-rocket@2x.png");
-	}
-}
-
-/* ==========================================
-  gitter
-  ======================================== */
-
-div.gitter-chat-embed-action-bar {
-	max-height: 50px;
-	display: block;
-	height: 50px;
-	position: absolute
-}
-
-a.gitter-chat-embed-action-bar-item.gitter-chat-embed-action-bar-item-pop-out {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-button.gitter-chat-embed-action-bar-item.gitter-chat-embed-action-bar-item-collapse-chat {
-	width: 50px;
-	height: 50px;
-	top: 0;
-	right: 0;
-	position: absolute;
-	padding: 0;
-	margin: 0;
-}
-
-/* ==========================================
-  Figures
-  ======================================== */
-
-figure.ethereum-network {
-	display: block;
-	width: 100%;
-	height: 306px;
-	background-image: url("../images/ethereum-network-outline@2x.png");
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-figure.geth-console {
-	display: block;
-	width: 100%;
-	height: 225px;
-	margin: 10px auto 0 auto;
-	background-image: url("../images/console.gif");
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-.server-figure {
-	min-height: 275px;
-}
-
-figure.ethereum-explain {
-	width: 100%;
-	height: 275px;
-	position: absolute;
-}
-
-figure.ethereum-explain .explain-01 {
-	background-image: url("../images/explain-01.gif");
-}
-
-figure.ethereum-explain .explain-02 {
-	background-image: url("../images/explain-02.png");
-}
-
-figure.ethereum-explain .explain-02b {
-	background-image: url("../images/explain-02b.gif");
-}
-
-figure.ethereum-explain .explain-03 {
-	background-image: url("../images/explain-03.gif");
-}
-
-.wallet-figure-outer {
-	min-height: 310px;
-}
-
-figure.wallet-figure {
-	width: 100%;
-	height: 310px;
-	position: absolute;
-}
-
-figure.wallet-figure .caption {
-	top: 310px;
-	font-style: italic;
-}
-
-figure.wallet-figure .wallet-01 {
-	background-image: url("../images/wallet-01.gif");
-}
-
-figure.wallet-figure .wallet-02 {
-	background-image: url("../images/wallet-02.gif");
-}
-
-figure.wallet-figure .wallet-03 {
-	background-image: url("../images/wallet-03.gif");
-}
-
-figure.wallet {
-	max-width: 736px;
-	height: 500px;
-}
-
-figure.wallet .wallet-start {
-	background-image: url("../images/wallet-start.png");
-}
-
-figure.wallet .wallet-create {
-	background-image: url("../images/wallet-create.png");
-}
-
-figure.wallet .wallet-confirm {
-	background-image: url("../images/wallet-confirm.png");
-}
-
-figure.geth {
-	max-width: 380px;
-	height: 280px;
-}
-
-figure.geth .geth-background {
-	background-image: url("../images/geth.png");
-}
-
-figure.geth .geth-logo {
-	background-image: url("../images/geth-foreground.png");
-}
-
-figure.ether {
-	max-width: 375px;
-	height: 388px;
-}
-
-figure.ether .ether-screen {
-	background-image: url("../images/ether-screen.gif");
-}
-
-figure.ether .ether-pacman {
-	background-image: url("../images/ether-pacman.gif");
-}
-
-figure.ether .ether-coin {
-	background-image: url("../images/ether-coin.png");
-}
-
-figure.ether .ether-arcade-front {
-	background-image: url("../images/ether-arcade-front.png");
-}
-
-figure.ether .ether-arcade-back {
-	background-image: url("../images/ether-arcade-back.png");
-}
-
-figure.greeter {
-	max-width: 317px;
-	height: 274px;
-}
-
-figure.greeter .greeter-human {
-	background-image: url("../images/greeter-human.png");
-}
-
-figure.greeter .greeter-robot {
-	background-image: url("../images/greeter-robot.png");
-}
-
-figure.greeter .greeter-question {
-	background-image: url("../images/greeter-question.png");
-}
-
-figure.greeter .greeter-answer {
-	background-image: url("../images/greeter-answer.png");
-}
-
-figure.coin {
-	height: 342px;
-}
-
-figure.coin .coin-connection {
-	background-image: url("../images/token-connection.png");
-}
-
-figure.coin .coin-users {
-	background-image: url("../images/token-users.png");
-}
-
-figure.coin .coin-coins {
-	background-image: url("../images/token-coins.png");
-}
-
-figure.coin .coin-send {
-	background-image: url("../images/token-send.png");
-}
-
-figure.crowdsale {
-	height: 384px;
-}
-
-figure.crowdsale .crowdsale-logic {
-	background-image: url("../images/crowdsale-logic.png");
-}
-
-figure.crowdsale .crowdsale-robot {
-	background-image: url("../images/crowdsale-robot.png");
-}
-
-figure.crowdsale .crowdsale-money {
-	background-image: url("../images/crowdsale-money.png");
-}
-
-figure.crowdsale .crowdsale-contributions {
-	background-image: url("../images/crowdsale-contributions.png");
-}
-
-figure.crowdsale .crowdsale-crowd {
-	background-image: url("../images/crowdsale-crowd.png");
-}
-
-figure.dao {
-	height: 424px;
-}
-
-figure.dao .dao-robot {
-	background-image: url("../images/dao-robot.png");
-}
-
-figure.dao .dao-money {
-	background-image: url("../images/dao-money.png");
-}
-
-figure.dao .dao-arrows {
-	background-image: url("../images/dao-arrows.png");
-}
-
-figure.dao .dao-ideas {
-	background-image: url("../images/dao-ideas.png");
-}
-
-figure.dao .dao-crowd {
-	background-image: url("../images/dao-crowd.png");
-}
-
-.future-figure {
-	margin-top: -90px;
-}
-
-figure.moon {
-	max-width: 420px;
-	height: 424px;
-}
-
-figure.moon .moon-stars {
-	background-image: url("../images/moon-stars.png");
-}
-
-figure.moon .moon-moon {
-	background-image: url("../images/moon-moon.png");
-}
-
-figure.moon .moon-rocket {
-	background-image: url("../images/moon-rocket.png");
-	top: 150px;
-	bottom: -150px;
-}
-
-figure.swarm {
-	max-width: 300px;
-	height: 300px;
-}
-
-figure.swarm .swarm-01 {
-	background-image: url("../images/swarm-01.png");
-}
-
-figure.swarm .swarm-02 {
-	background-image: url("../images/swarm-02.png");
-}
-
-figure.swarm .swarm-03 {
-	background-image: url("../images/swarm-03.png");
-}
-
-figure.swarm .swarm-04 {
-	background-image: url("../images/swarm-04.png");
-}
-
-figure.ethereum-logo {
-	display: block;
-	background-image: url("../images/ethereum-logo.png");
-	max-width: 275px;
-	height: 287px;
-	margin: 0 auto;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-}
 
 /* ==========================================
   cookie-policy.pug
@@ -2133,11 +1690,6 @@ ul.menu-list li:last-child {
 	background-color: #eee;
 }
 
-#structure {
-	padding-top: 120px;
-	padding-bottom: 90px;
-}
-
 #structure .title {
 	font-size: 62px;
 	margin-bottom: 45px;
@@ -2158,20 +1710,95 @@ ul.menu-list li:last-child {
 	margin-left: -15px;
 }
 
-#structure .animate {
+.animate {
 	transition-timing-function: cubic-bezier(.19,1,.22,1);
 	transition-duration: 1.2s;
 	transition-property: opacity, transform;
 	opacity: 0;
 }
 
-#structure .show {
+.show {
 	opacity: 1 !important;
-	transform: translateY(0) !important;
+	transform: none !important;
 }
 
 #structure img {
 	margin-top: 12em;
-	margin-bottom: 6em;
+	/*margin-bottom: 0;*/
 	opacity: 0;
+}
+
+#projects {
+	padding-top: 0;
+}
+
+#projects .title {
+	margin-top: 2em;
+	margin-bottom: 1.5em;
+	font-size: 62px;
+	transform: translateX(-100px);
+}
+
+#projects hr {
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: #000000;
+	opacity: 0.2;
+	height: 1px;
+}
+
+#projects img {
+	margin-bottom: 25px;
+	width: 100px;
+	height: 100px;
+	max-width: 100%;
+}
+
+#projects .heading {
+	margin-bottom: 25px;
+	margin-top: 12px;
+	font-size: 28px;
+	color: #202326;
+	font-weight: 500;
+	line-height: 1.17;
+}
+
+#projects .heading a {
+	color: #00b700;
+	text-decoration: none;
+}
+
+#projects .description {
+	font-size: 16px;
+	line-height: 1.55;
+	font-weight: 300;
+	color: #202326;
+	margin-bottom: 90px;
+	text-align: left;
+	padding: 0 20px;
+}
+
+#projects .description ul {
+	padding-left: 20px;
+}
+
+#projects .items .col-md-6 {
+	transform: translateX(100px);
+	transition-duration: .5s;
+}
+
+#projects .items .row:first-child .col-md-6:first-child {
+	transition-delay: 0.16s;
+}
+
+#projects .items .row:first-child .col-md-6:last-child {
+	transition-delay: 0.32s;
+}
+
+#projects .items .row:last-child .col-md-6:first-child {
+	transition-delay: 0.48s;
+}
+
+#projects .items .row:last-child .col-md-6:last-child {
+	transition-delay: 0.64s;
 }
