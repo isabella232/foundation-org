@@ -1802,3 +1802,29 @@ ul.menu-list li:last-child {
 #projects .items .row:last-child .col-md-6:last-child {
 	transition-delay: 0.64s;
 }
+
+@media screen and (max-width: 1200px) {
+	#projects .heading {
+		font-size: 28px;
+	}
+
+	#projects .description {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	#projects .title {
+		margin-bottom: 0.4em;
+	}
+
+	#projects .heading {
+		font-size: 24px;
+	}
+
+	#projects .description {
+		font-size: 12px;
+		line-height: 1.45;
+		margin-bottom: 1em;
+	}
+}
