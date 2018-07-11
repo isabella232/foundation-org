@@ -1811,6 +1811,10 @@ ul.menu-list li:last-child {
 	#projects .description {
 		font-size: 14px;
 	}
+
+	#structure .description {
+		font-size: 22px;
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -1826,5 +1830,9 @@ ul.menu-list li:last-child {
 		font-size: 12px;
 		line-height: 1.45;
 		margin-bottom: 1em;
+	}
+
+	#structure .description {
+		font-size: 20px;
 	}
 }
