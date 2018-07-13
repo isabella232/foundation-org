@@ -1973,6 +1973,15 @@ ul.menu-list li:last-child {
 		left: 15px !important;
 		margin-bottom: 15px;
 	}
+
+	.news-item .btn-container, .news-item .text .content {
+		transform: translate3d(0,0,0) !important;
+		opacity: 1 !important;
+	}
+
+	.news-item {
+		height: 400px;
+	}
 }
 
 @media screen and (max-width: 640px) {
