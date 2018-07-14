@@ -1993,3 +1993,37 @@ ul.menu-list li:last-child {
 		font-size: 12px !important;
 	}
 }
+
+#we-are-hiring .title {
+	text-transform: none;
+}
+
+#we-are-hiring ul {
+	font-size: 24px;
+	line-height: 1.5;
+	color: #000000;
+	font-weight: 300 !important;
+}
+
+#we-are-hiring a {
+	color: #ffffff;
+	background-color: #00b700;
+	border-radius: 10px;
+	padding: 30px 90px;
+	font-weight: 600;
+	font-size: 30px;
+
+}
+
+#we-are-hiring .btn-container {
+	margin-top: 100px;
+}
+
+#we-are-hiring svg {
+	width: 45px;
+	position: absolute;
+	transform: translateX(-100%);
+	fill: #c9c9c9;
+	margin-top: -30px;
+	margin-left: -35px;
+}
