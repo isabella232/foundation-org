@@ -1,0 +1,33 @@
+#structure {
+  .title {
+    font-size: 62px;
+    margin-bottom: 45px;
+    line-height: 1.2;
+    transform: translateX(20%);
+  }
+  .description {
+    text-align: left;
+    font-size: 26px;
+    line-height: 1.45;
+    font-weight: 300;
+    transition-delay: .3s;
+    transform: translateX(20%);
+  }
+
+  ul {
+    margin-left: -15px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #structure .description {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #structure .description {
+    font-size: 20px;
+    margin-bottom: 5em;
+  }
+}

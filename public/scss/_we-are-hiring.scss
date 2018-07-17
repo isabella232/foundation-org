@@ -1,0 +1,85 @@
+
+#we-are-hiring {
+  .title {
+    text-transform: none;
+    font-size: 52px;
+  }
+
+  ul {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #000000;
+    font-weight: 300 !important;
+  }
+
+  a div {
+    color: #ffffff;
+    background-color: #00b700;
+    border-radius: 10px;
+    padding: 30px 90px;
+    font-weight: 600;
+    font-size: 30px;
+    width: auto;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+  .btn-container {
+    margin-top: 100px;
+  }
+
+  svg {
+    &:first-child {
+      width: 45px;
+      position: absolute;
+      transform: translateX(-100%);
+      fill: #c9c9c9;
+      margin-left: -35px;
+    }
+
+    &:nth-child(2) {
+      width: 20px;
+      margin: 0 auto 20px;
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #we-are-hiring ul {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #we-are-hiring {
+    svg {
+      &:first-child {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+
+    .btn-container {
+      margin-top: 30px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #we-are-hiring {
+    ul {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    a div {
+      font-size: 18px;
+      padding: 15px 90px;
+      display: block;
+    }
+  }
+}
