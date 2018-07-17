@@ -1,0 +1,151 @@
+#team {
+  background: #f7f9fa;
+
+  .title {
+    transform: translateX(20%);
+  }
+
+  .description {
+    font-size: 24px;
+    margin-bottom: 100px;
+    transition-delay: .3s;
+    transform: translateX(20%);
+  }
+
+  .team-item {
+    padding: 5px;
+
+    .name {
+      font-size: 22px;
+      line-height: 1.35;
+      color: #00b700;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .desc {
+      margin-bottom: 25px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #7a7a7a;
+      font-weight: 300;
+    }
+
+    .image {
+      background-image: url(https://static.tildacdn.com/tild6330-3735-4531-b730-356236313131/Petr_IMG_1466_2.jpg);
+      padding-bottom: 100%;
+      width: 100%;
+      max-width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-bottom: 30px;
+    }
+
+    .line {
+      max-width: 50px;
+      width: 100%;
+      height: 2px;
+      background-color: #ffb900;
+      margin-bottom: 25px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 300;
+      color: #202326;
+    }
+
+    > ul {
+      margin-bottom: 65px;
+    }
+  }
+
+  .col-md-4 {
+    transform: translateX(100px);
+    transition-duration: .5s;
+  }
+
+  #petrKorolev {
+    transition-delay: 0.16s;
+  }
+
+  #sashaVlasov {
+    transition-delay: 0.32s;
+  }
+
+  #igorGulamov {
+    transition-delay: 0.48s;
+  }
+
+  #mariaDavletshina {
+    transition-delay: 0.64s;
+  }
+
+  #romaSemenov {
+    transition-delay: 0.8s;
+  }
+
+  #petrKorolev .image {
+    background-image: url('../images/team/petrKorolev.jpg');
+  }
+
+  #sashaVlasov .image {
+    background-image: url('../images/team/sashaVlasov.jpg');
+  }
+
+  #igorGulamov .image {
+    background-image: url('../images/team/igorGulamov.jpg');
+  }
+
+  #mariaDavletshina .image {
+    background-image: url('../images/team/mariaDavletshina.jpg');
+  }
+
+  #romaSemenov .image {
+    background-image: url('../images/team/romaSemenov.jpg');
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #team .team-item {
+    .name {
+      font-size: 20px;
+    }
+
+    ul {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #team .team-item {
+    .desc {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .line {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #team .team-item {
+    padding: 10px;
+
+    .name {
+      font-size: 18px;
+    }
+
+    ul {
+      font-size: 12px;
+      line-height: 1.45;
+    }
+  }
+}

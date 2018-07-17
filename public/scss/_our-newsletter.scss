@@ -1,0 +1,102 @@
+#ourNewsletter {
+  background: transparent;
+  height: 700px;
+  padding-top: 255px;
+
+  .title {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    text-transform: none;
+    font-size: 48px;
+  }
+
+  .overlay {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    height: 700px;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.50), rgba(20, 20, 20, 0.30));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.50), rgba(20, 20, 20, 0.30));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.50), rgba(20, 20, 20, 0.30));
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.50), rgba(20, 20, 20, 0.30));
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(https://static.tildacdn.com/tild6135-6235-4532-b839-363639366638/1804.jpg);
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    vertical-align: middle;
+    background-attachment: fixed;
+    height: 700px !important;
+    width: 100%;
+  }
+
+  input {
+    color: #00b700;
+    background-color: #f7f9fa;
+    border-radius: 5px;
+    padding: 0 20px;
+    height: 56px;
+    position: relative;
+    z-index: 3;
+    border: none;
+    outline: none;
+    width: 60%;
+    font-weight: 300;
+  }
+
+  button {
+    color: #ffffff;
+    background-color: #00b700;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 16px 40px;
+    position: relative;
+    z-index: 3;
+    margin-left: 20px;
+    font-weight: 600;
+    top: -1px;
+    outline: none;
+    display: inline-block;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #ourNewsletter .title {
+    font-size: 44px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #ourNewsletter {
+    input {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+      display: block;
+      margin: 20px 0;
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #ourNewsletter .title {
+    font-size: 30px;
+  }
+}
+
