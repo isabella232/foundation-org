@@ -29,5 +29,21 @@ $(document).ready(function() {
             }
         });
     }
+
+    $(function() {
+        $("#map").googleMap({
+            zoom: 15,
+            overviewMapControl: true,
+            streetViewControl: true,
+            scrollwheel: true,
+            mapTypeControl: true,
+            coords: [51.58731, 4.762877]
+        });
+        $("#map").addMarker({
+            coords: [51.58731, 4.762877], // GPS coords
+            title: 'BANKEX Foundation', // Link to redirect onclick (optional)
+            id: 'marker1' // Unique ID for your marker
+        });
+    })
 });
 

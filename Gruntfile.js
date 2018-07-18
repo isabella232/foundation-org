@@ -10,6 +10,7 @@ var vendor = [
     'public/js/bitcoinjs-min.js',
     'public/js/numeral.js',
     'public/js/jquery.tableofcontents.min.js',
+    'public/js/jquery.googlemap.js',
     'node_modules/slick-carousel/slick/slick.js'
 ];
 
