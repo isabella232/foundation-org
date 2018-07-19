@@ -1,6 +1,7 @@
 body {
   background: #fff;
   overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .main-content {
@@ -71,19 +72,6 @@ body {
 .show {
   opacity: 1 !important;
   transform: none !important;
-}
-
-::-webkit-input-placeholder {
-  color: #00b700;
-}
-::-moz-placeholder {
-  color: #00b700;
-}
-:-ms-input-placeholder {
-  color: #00b700;
-}
-:-moz-placeholder {
-  color: #00b700;
 }
 
 .gm-style .gm-style-iw {
