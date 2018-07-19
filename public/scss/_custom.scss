@@ -77,3 +77,13 @@ body {
 .gm-style .gm-style-iw {
   color: #000;
 }
+
+.indicator {
+  width: 0;
+  position: fixed;
+  top: 0;
+  transition: width .6s ease;
+  z-index: 9999999999;
+  background: rgb(0, 183, 0);
+  height: 1px;
+}

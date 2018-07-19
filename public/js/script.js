@@ -10,9 +10,11 @@ $(document).ready(function() {
     });
 
     animate();
+    indicator();
 
     $(window).on("scroll", function() {
         animate();
+        indicator();
     });
 
     function animate() {
@@ -28,6 +30,14 @@ $(document).ready(function() {
                 $(this).removeClass('show');
             }
         });
+    }
+
+    function indicator() {
+        var indicator = $('.indicator');
+        var offset = $(window).scrollTop();
+        var documentHeight = $(document.body).height() - $(window).innerHeight();
+
+        indicator.css('width', ((offset * 100) / documentHeight) + '%');
     }
 
     $(function() {

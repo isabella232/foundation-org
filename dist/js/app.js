@@ -39,9 +39,11 @@ function showBalance(acc){
     });
 
     animate();
+    indicator();
 
     $(window).on("scroll", function() {
         animate();
+        indicator();
     });
 
     function animate() {
@@ -57,6 +59,16 @@ function showBalance(acc){
                 $(this).removeClass('show');
             }
         });
+    }
+
+    function indicator() {
+        var indicator = $('.indicator');
+        var offset = $(window).scrollTop();
+        var documentHeight = $(document.body).height() - $(window).innerHeight();
+
+        console.log(documentHeight);
+
+        indicator.css('width', ((offset * 100) / documentHeight) + '%');
     }
 
     $(function() {
