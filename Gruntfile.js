@@ -42,7 +42,8 @@ module.exports = function (grunt) {
         clean: {
             build: ['dist'],
             cleanup_js: ['dist/js/*.*', '!dist/js/app.*'],
-            cleanup_css: ['dist/css/*.css', '!dist/css/app.*.css']
+            cleanup_css: ['dist/css/*.css', '!dist/css/app.*.css'],
+            css: ['dist/css/*.css']
         },
         pug: {
             build: {
@@ -232,7 +233,7 @@ module.exports = function (grunt) {
         },
         watch: {
             pug: {
-                files: ['views/*.pug'],
+                files: ['views/**/*.pug'],
                 tasks: [
                     'pug'
                 ],
@@ -250,7 +251,7 @@ module.exports = function (grunt) {
             sass: {
                 files: ['public/scss/*.scss'],
                 tasks: [
-                    'clean:cleanup_css',
+                    'clean:css',
                     'sass',
                     'copy',
                     'cssmin',
