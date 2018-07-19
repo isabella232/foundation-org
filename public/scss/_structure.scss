@@ -5,13 +5,37 @@
     line-height: 1.2;
     transform: translateX(20%);
   }
+
+  .links {
+    text-align: center;
+    margin-top: 2em;
+
+    a {
+      font-weight: 600;
+      text-decoration: none !important;
+    }
+
+    .col-xs-4:first-child a {
+      color: #00b700;
+    }
+
+    .col-xs-4:nth-child(2n) a {
+      color: #0097d3;
+    }
+
+    .col-xs-4:last-child a {
+      color: #febe0f;
+    }
+  }
+
   .description {
-    text-align: left;
+    text-align: center;
     font-size: 26px;
     line-height: 1.45;
     font-weight: 300;
     transition-delay: .3s;
     transform: translateX(20%);
+    margin-bottom: 7em;
   }
 
   ul {
