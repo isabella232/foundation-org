@@ -1,23 +1,19 @@
 extends layout
 
 block vars
-  - var title='Page not Found'
-  - var url='404'
+    - var title='Error 404'
+    - var url='404'
 
 block content
-  include mixins/recipes.pug
-  +inner-header("Page Not Found")
-
-  .main-tutorial.inner-page.inner-tutorial
-    .container  
-      .row
-        .col-md-6.text-center.col-md-offset-3
-          .bad-robot
-            img(src='images/bad-robot@2x.png', width='113')
-          
-          include:markdown-it content/404.md        
-
-          a.button.small(href='https://ethereum.org') Improve the world
+    .main-tutorial.error
+        .overlay
+        .container
+            .row
+                .col-md-offset-3.col-md-6.text-center
+                    .table-cell
+                        .title Ooops... Error 404
+                        .description Sorry, but the page you are looking for doesn't exist.
+                        a(href='/') Back to Home
 
         
 
