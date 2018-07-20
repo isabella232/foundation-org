@@ -11,7 +11,8 @@ var vendor = [
     'public/js/numeral.js',
     'public/js/jquery.tableofcontents.min.js',
     'public/js/jquery.googlemap.js',
-    'node_modules/slick-carousel/slick/slick.js'
+    'node_modules/slick-carousel/slick/slick.js',
+    'public/js/jquery.easeInOutExpo.js'
 ];
 
 var styles = ['bootstrap.min.css', 'font-awesome.min.css', /*'style.css'*/];

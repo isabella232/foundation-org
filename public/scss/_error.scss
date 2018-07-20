@@ -1,0 +1,47 @@
+.error {
+  background-image: url('../images/error.jpg');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  background-attachment: fixed;
+
+  .overlay {
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80));
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .title {
+    font-size: 62px;
+    color: #000000;
+    padding: 24px 0 24px 0;
+    font-weight: 300;
+  }
+
+  .description {
+    font-size: 30px;
+    color: #626262;
+    padding: 15px 0 30px 0;
+    font-weight: 300;
+  }
+
+  a {
+    color: #00b700;
+    text-decoration: none;
+    margin-top: 45px;
+    font-weight: 700;
+    display: block;
+  }
+
+  .table-cell {
+    display: table-cell;
+    height: 100vh;
+    vertical-align: middle;
+  }
+}

@@ -27,7 +27,7 @@ function showBalance(acc){
 
   });
 })()
-;$(document).ready(function() {
+;$(document).ready(function () {
     $('.home-slider').slick({
         dots: true,
         infinite: true,
@@ -40,7 +40,7 @@ function showBalance(acc){
 
     animate();
 
-    $(window).on("scroll", function() {
+    $(window).on("scroll", function () {
         animate();
     });
 
@@ -59,7 +59,7 @@ function showBalance(acc){
         });
     }
 
-    $(function() {
+    $(function () {
         $("#map").googleMap({
             zoom: 15,
             overviewMapControl: true,
@@ -73,6 +73,16 @@ function showBalance(acc){
             title: 'BANKEX Foundation', // Link to redirect onclick (optional)
             id: 'marker1' // Unique ID for your marker
         });
-    })
+    });
+
+    $(function () {
+        $('a.page-scroll').bind('click', function (event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1500, 'easeInOutExpo');
+            event.preventDefault();
+        });
+    });
 });
 
