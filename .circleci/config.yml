@@ -1,0 +1,51 @@
+version: 2
+jobs:
+  build-docker-image:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Build-Push stage image
+          command: |
+            docker login -u $DHLOGIN -p $DHPASS
+            docker build -t $IMAGE:stage .
+            docker push $IMAGE:stage
+
+  deploy-stage:
+    machine: true
+    environment:
+      VIRTUAL_HOST: new.bankexfoundation.org
+      LETSENCRYPT_HOST: new.bankexfoundation.org
+      LETSENCRYPT_EMAIL: om@bankexfoundation.org
+    steps:
+      - checkout
+      - run:
+          name: Deploy to stage
+          command: |
+            mkdir -p certs
+            echo -e $DOCKERCA > certs/ca.pem
+            echo -e $DOCKERCERT > certs/cert.pem
+            echo -e $DOCKERKEY > certs/key.pem
+            export DOCKER_TLS_VERIFY="1"
+            export DOCKER_HOST="tcp://$STAGEHOST:2376"
+            export DOCKER_CERT_PATH="/home/circleci/project/certs"
+            docker login -u $DHLOGIN -p $DHPASS
+            docker-compose -f docker-compose.yml down
+            docker rmi $IMAGE:stage || echo "image not exist"
+            docker pull $IMAGE:stage
+            docker-compose -f docker-compose.yml up -d
+
+workflows:
+  version: 2
+  stage-workflow:
+    jobs:
+      - build-docker-image:
+          filters:
+            branches:
+              only: master
+      - deploy-stage:
+          requires:
+            - build-docker-image
+          filters:
+            branches:
+              only: master
