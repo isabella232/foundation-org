@@ -1,5 +1,5 @@
 <ul>
-    <li> Senior Solidity developerr </li>
+    <li> Senior Solidity developer </li>
     <li> Senior iOS developer </li>
     <li> TeamLead Node.JS </li>
     <li> Node.JS developer </li>
