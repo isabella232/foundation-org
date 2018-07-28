@@ -1,0 +1,43 @@
+.main-content#form
+    .container
+        .row
+            .col-md-8.col-md-offset-2
+                form
+                    .col-md-6
+                        label Name
+                        input(placeholder='Your Full Name')
+                    .col-md-6
+                        label E-mail
+                        input(placeholder='Your E-mail')
+                    .col-md-6
+                        label Phone
+                        input(placeholder='Your Phone')
+                    .col-md-6
+                        label Company
+                        input(placeholder='Company')
+                    .col-md-6
+                        label Industry
+                        .select-wrapper
+                            select
+                                each val in ['Select Industry...', 'Academia', 'Advertising', 'Banking/Financial', 'Cryptocurrency', 'Cybersecurity', 'Energy', 'Government', 'Healthcare', 'Insurance', 'Non-Profit', 'Pharmaceutical', 'Sports', 'Supply Chain', 'Other']
+                                    option=val
+                    .col-md-6
+                        label Company url
+                        input(placeholder='Company url')
+                    .col-md-12
+                        label Company size
+                        .select-wrapper
+                            select
+                                option Less than 50 Employees / Individuals
+                                option Between 51-500 Employees
+                                option Between 501-5000 Employees
+                                option More than 5000 Employees
+                    .col-md-12
+                        label Address
+                        textarea(rows='4')
+                        .desc Explain your interest in joining BANKEX Foundation Alliance and current experience with blockchain technologies
+                        textarea(rows='4')
+                        .text-center
+                            button.submit Apply for membership
+
+
