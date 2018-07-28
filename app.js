@@ -22,76 +22,8 @@ app.get('/', (request, response) => {
   response.render('index');
 });
 
-app.get('/wallet', (request, response) => {
-  response.render('wallet');
-});
-
-app.get('/cli', (request, response) => {
-  response.render('cli');
-});
-
-app.get('/ether', (request, response) => {
-  response.render('ether');
-});
-
-app.get('/greeter', (request, response) => {
-  response.render('greeter');
-});
-
-app.get('/token', (request, response) => {
-  response.render('token');
-});
-
-app.get('/crowdsale', (request, response) => {
-  response.render('crowdsale');
-});
-
-app.get('/dao', (request, response) => {
-  response.render('dao');
-});
-
-app.get('/agreement', (request, response) => {
-  response.render('agreement');
-});
-
-app.get('/assets', (request, response) => {
-  response.render('assets');
-});
-
-app.get('/brand', (request, response) => {
-  response.render('brand');
-});
-
-app.get('/foundation', (request, response) => {
-  response.render('foundation');
-});
-
-app.get('/donate', (request, response) => {
-  response.render('donate');
-});
-
-app.get('/devgrants', (request, response) => {
-  response.render('devgrants');
-});
-
-app.get('/devcontwo', (request, response) => {
-  response.render('devcon2');
-});
-
-app.get('/swarm', (request, response) => {
-  response.render('swarm');
-});
-
-app.get('/privacy-policy', (request, response) => {
-  response.render('privacy-policy');
-});
-
-app.get('/cookie-policy', (request, response) => {
-  response.render('cookie-policy');
-});
-
-app.get('/terms-of-use', (request, response) => {
-  response.render('terms-of-use');
+app.get('/alliance', (request, response) => {
+  response.render('alliance');
 });
 
 app.get('/*', (request, response, next) => {

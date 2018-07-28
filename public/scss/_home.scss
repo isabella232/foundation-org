@@ -7,18 +7,16 @@ div.scrollme {
   }
 
   &.introduction {
-    height: 60vw;
+    height: 100vh;
     min-height: 440px;
-    max-height: 825px;
     background: #102026 url('../images/introduction.jpg') center center no-repeat;
     background-size: cover;
   }
 }
 
 .bg {
-  height: 60vw;
+  height: 100vh;
   min-height: 440px;
-  max-height: 825px;
   z-index: 99;
   background: rgba(0, 0, 0, 0.5);
   margin-bottom: 0 !important;
