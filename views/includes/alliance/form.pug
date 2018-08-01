@@ -2,42 +2,53 @@
     .container
         .row
             .col-md-8.col-md-offset-2
+                .col-md-12
+                    .success-box Thank you! Data was successfully sent.
                 form
                     .col-md-6
                         label Name
-                        input(placeholder='Your Full Name')
+                        input(placeholder='Your Full Name', name='name')
                     .col-md-6
                         label E-mail
-                        input(placeholder='Your E-mail')
+                        input(placeholder='Your E-mail', name='email')
+                        .error-message Please fill out all required fields
                     .col-md-6
                         label Phone
-                        input(placeholder='Your Phone')
+                        input(placeholder='Your Phone', name='phone')
                     .col-md-6
                         label Company
-                        input(placeholder='Company')
+                        input(placeholder='Company', name='company')
+                        .error-message Please fill out all required fields
                     .col-md-6
                         label Industry
                         .select-wrapper
-                            select
+                            select(name='industry')
                                 each val in ['Select Industry...', 'Academia', 'Advertising', 'Banking/Financial', 'Cryptocurrency', 'Cybersecurity', 'Energy', 'Government', 'Healthcare', 'Insurance', 'Non-Profit', 'Pharmaceutical', 'Sports', 'Supply Chain', 'Other']
-                                    option=val
+                                    if val !== 'Select Industry...'
+                                        option=val
+                                    else
+                                        option(value='')=val
                     .col-md-6
                         label Company url
-                        input(placeholder='Company url')
+                        input(placeholder='Company url', name='company_url')
                     .col-md-12
                         label Company size
                         .select-wrapper
-                            select
-                                option Less than 50 Employees / Individuals
+                            select(name='company_size')
+                                option(value='') Less than 50 Employees / Individuals
                                 option Between 51-500 Employees
                                 option Between 501-5000 Employees
                                 option More than 5000 Employees
                     .col-md-12
                         label Address
-                        textarea(rows='4')
+                        textarea(rows='4', name='address')
                         .desc Explain your interest in joining BANKEX Foundation Alliance and current experience with blockchain technologies
-                        textarea(rows='4')
+                        textarea(rows='4', name='comments')
                         .text-center
-                            button.submit Apply for membership
+                            .error-box Please fill out all required fields
+                            button.submit
+                                .fa.fa-spin.fa-spinner
+                                | Apply for membership
+
 
 

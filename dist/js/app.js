@@ -114,5 +114,46 @@ function showBalance(acc){
         event.preventDefault();
     });
 
+    $('.submit').on('click', function (e) {
+        var table = '<table>';
+        var email = $('#form input[name="email"]');
+        var company = $('#form input[name="company"]');
+
+        $('#form input, #form select, #form textarea').each(function () {
+            if (!!$(this).val())
+                table += '<tr><td>' + $(this).attr('name') + ': </td><td>' + $(this).val() + '</td></tr>';
+        });
+
+        table += '</table>';
+
+        if ($(email).val() && $(company).val()) {
+            $('#form .error-box').hide();
+            $('#form button.submit').attr('disabled', 'disabled');
+
+            $.ajax({
+                method: 'post',
+                url: "/sendEmail",
+                data: {
+                    message: table,
+                    email: $(email).val()
+                },
+                success: function () {
+                    $('#form form').hide();
+                    $('#form .success-box').show();
+                    $('#form .submit').removeAttr('disabled');
+                }
+            });
+        } else {
+            $('#form .error-box').show();
+
+            if (!(email).val())
+                $(email).parent().addClass('error-input');
+
+            if (!$(company).val())
+                $(company).parent().addClass('error-input');
+        }
+
+       e.preventDefault();
+    });
 });
 
