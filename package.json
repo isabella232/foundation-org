@@ -23,6 +23,7 @@
     "jstransformer-markdown-it": "^2.0.0",
     "markdown": "latest",
     "markdown-it-include": "0.0.2",
+    "nodemailer": "^4.6.7",
     "pug": "^2.0.0-rc.4",
     "serve-favicon": "^2.5.0",
     "simplecrawler": "^1.1.6",
