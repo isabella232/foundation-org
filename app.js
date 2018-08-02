@@ -15,7 +15,6 @@ app.use(favicon(path.join(__dirname, '/dist/images/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(express.static(path.join(__dirname, 'blog/_site')));
 
 app.set('port', process.env.PORT || 8080);
 
@@ -26,10 +25,6 @@ app.get('/', (request, response) => {
 
 app.get('/alliance', (request, response) => {
     response.render('alliance');
-});
-
-app.get('/blog', (request, response) => {
-    response.sendFile(path.join(__dirname, 'blog/_site/index.html'));
 });
 
 app.post('/sendEmail', (request, response) => {

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "npm run build && node ./bin/www",
-    "build": "grunt && cd ./blog && jekyll build",
+    "build": "grunt",
     "check-links": "http-server dist/ --silent & blc http://localhost:8080 -rg"
   },
   "dependencies": {
