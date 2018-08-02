@@ -1,51 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
 
     <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+          href="{{ site.baseurl }}/feed.xml"/>
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+</head>
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
+<body>
+<div class="header header-logo active">
+    <div class="header-container">
+        <div class="header-left"><a href="{{ site.baseurl }}/"><img
+                src="{{ site.avatar }}"></a></div>
+        <div class="header-center">
+            <ul class="menu-list">
+                <li><a class="page-scroll" href="/#about-us">About</a></li>
+                <li><a class="page-scroll" href="/#we-are-hiring">We are hiring</a></li>
+                <li><a class="page-scroll" href="/#contact-us">Contact Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </div>
     </div>
+</div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+<div id="main" role="main" class="container-fluid">
+    {{ content }}
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-3 col-xs-offset-6 col-xs-6">
+                <div class="title">Home</div>
+                <ul class="menu-items">
+                    <li><a class="page-scroll" href="/#about-us">About Us</a></li>
+                    <li><a class="page-scroll" href="/#we-are-hiring">We are hiring</a></li>
+                    <li><a class="page-scroll" href="/#contact-us">Contact Us</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <div class="title">Projects</div>
+                <ul class="menu-items">
+                    <li><a class="page-scroll" href="https://opencharity.io/">Open Charity</a></li>
+                    <li><a class="page-scroll" href="https://bankexfoundation.org/school/">Education</a></li>
+                    <li><a class="page-scroll" href="https://github.com/BANKEX">Plasma Protocol</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <div class="title">Subscribe</div>
+                <input placeholder="Your email">
+                <button class="send">
+                    <svg class="t447__btnicon" fill="#00b700" width="20px" height="20px" viewBox="0 0 25 21.4"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <desc>Subscribe</desc>
+                        <path d="M0 21.4l25-10.7L0 0v8.3l17.9 2.4L0 13.1v8.3z"></path>
+                    </svg>
+                </button>
+                <div class="social-links">
+                    <div class="social-links-item"><a href="https://www.facebook.com/BankExchange">
+                        <svg class="t-sociallinks__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve"><desc>Facebook</desc><path style="fill:#525252;" d="M21.1 7.8C22.5 6.5 24.5 6 26.4 6h6v6.3h-3.9c-.8-.1-1.6.6-1.8 1.4v4.2h5.7c-.1 2-.4 4.1-.7 6.1h-5v18h-7.4V24h-3.6v-6h3.6v-5.9c.1-1.7.7-3.3 1.8-4.3z"></path></svg>
+                    </a></div>
+                    <div class="social-links-item"><a href="https://twitter.com/BankExProtoco">
+                        <svg class="t-sociallinks__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve"><desc>Twitter</desc><path style="fill:#525252;" d="M41.8 12.7c-1.3.6-2.8 1-4.2 1.1 1.5-1 2.6-2.3 3.2-4-1.5.8-2.9 1.5-4.7 1.8-1.3-1.5-3.2-2.3-5.3-2.3-4 0-7.3 3.2-7.3 7.3 0 .6 0 1.1.2 1.6-6-.3-11.3-3.2-15.1-7.6-.6 1.1-1 2.3-1 3.7 0 2.6 1.3 4.7 3.2 6-1.1 0-2.3-.3-3.2-1v.2c0 3.6 2.4 6.5 5.8 7.1-.6.2-1.3.3-1.9.3-.5 0-1 0-1.3-.2 1 2.9 3.6 5 6.8 5-2.4 1.9-5.7 3.1-9.1 3.1-.6 0-1.1 0-1.8-.2 3.2 2.1 7 3.2 11.2 3.2 13.4 0 20.7-11 20.7-20.7v-1c1.7-.7 2.8-2 3.8-3.4z"></path></svg>
+                    </a></div>
+                    <div class="social-links-item"><a href="https://www.youtube.com/bankex">
+                        <svg class="t-sociallinks__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 48 48" enable-background="new -455 257 48 48" xml:space="preserve"><desc>Youtube</desc><path style="fill:#525252;" d="M43.9 15.3c-.4-3.1-2.2-5-5.3-5.3-3.6-.3-11.4-.5-15-.5-7.3 0-10.6.2-14.1.5-3.3.3-4.8 1.8-5.4 4.9-.4 2.1-.6 4.1-.6 8.9 0 4.3.2 6.9.5 9.2.4 3.1 2.5 4.8 5.7 5.1 3.6.3 10.9.5 14.4.5s11.2-.2 14.7-.6c3.1-.4 4.6-2 5.1-5.1 0 0 .5-3.3.5-9.1 0-3.3-.2-6.4-.5-8.5zM19.7 29.8V18l11.2 5.8-11.2 6z"></path></svg>
+                    </a></div>
+                    <div class="social-links-item"><a href="https://www.linkedin.com/company/bankex">
+                        <svg class="t-sociallinks__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 48 48" enable-background="new -455 257 48 48" xml:space="preserve"><desc>LinkedIn</desc><path style="fill:#525252;" d="M42.3 23.1v13.5h-7.9V24c0-3.2-1.1-5.3-4-5.3-2.2 0-3.5 1.5-4 2.9-.2.5-.3 1.2-.3 1.9v13.2h-7.9s.1-21.4 0-23.6h7.9v3.3s0 .1-.1.1h.1v-.1c1-1.6 2.9-3.9 7.1-3.9 5.2-.1 9.1 3.3 9.1 10.6zM10.1 1.6c-2.7 0-4.4 1.8-4.4 4.1S7.4 9.8 10 9.8h.1c2.7 0 4.4-1.8 4.4-4.1s-1.7-4.1-4.4-4.1zm-3.9 35H14V13H6.2v23.6z"></path></svg>
+                    </a></div>
+                    <div class="social-links-item"><a href="https://t.me/bankex">
+                        <svg class="t-sociallinks__svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" viewBox="0 0 60 60" xml:space="preserve"><desc>Telegram</desc><path style="fill:#525252;" d="M52.5,9L6.1,26.9c-0.9,0.4-0.9,1.8,0,2.3l11.9,4.9l4.4,14.1c0.3,0.8,1.2,1,1.8,0.5l6.8-6.4l12.9,8.7c0.7,0.4,1.6,0,1.7-0.7L54,10.3C54.2,9.5,53.3,8.7,52.5,9z M24.5,36.7L23.8,44l-3.6-11.2l25.3-16.8L24.5,36.7z"></path></svg>
+                    </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-6">
+                <div class="copyright">© 2018 BANKEX Foundation</div>
+            </div>
+            <div class="col-sm-3 col-sm-offset-6 col-xs-6">
+                <ul class="links">
+                    <li><a href="https://github.com/BANKEX">Github</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+</footer>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
+{% include analytics.html %}
+</body>
 </html>
