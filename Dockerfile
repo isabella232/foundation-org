@@ -1,4 +1,4 @@
-FROM bankexlabs/node:9-alpine
+FROM starefossen/ruby-node:alpine
 MAINTAINER Oleg Makarov <om@bankexfoundation.org>
 
 RUN mkdir /fdb-org
@@ -6,8 +6,9 @@ RUN mkdir /fdb-org
 WORKDIR /fdb-org
 
 ADD . /fdb-org
-RUN npm install --quiet node-gyp -g && npm install && npm rebuild bcrypt --build-from-source && npm rebuild node-sass && npm install -g grunt-cli
-RUN grunt
+RUN apk add --update make gcc g++
+RUN npm install
+RUN gem install github-pages
 
 ENTRYPOINT ["/usr/local/bin/npm", "start"]
 
