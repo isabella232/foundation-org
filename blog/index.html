@@ -2,17 +2,25 @@
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+{% for post in site.posts %}
+<article class="row main-content">
+    <div class="col-sm-offset-3 col-sm-6">
+        <div class="news-item">
+            <div class="title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+            <div class="description">
+                {{ post.excerpt }}
+            </div>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+            <div class="text">
+                <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">
+                    <div class="btn-container">
+                        <div class="btn">Read more</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <hr>
+    </div>
+</article>
+{% endfor %}

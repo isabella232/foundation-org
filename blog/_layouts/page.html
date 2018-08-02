@@ -2,11 +2,14 @@
 layout: default
 ---
 
-<article class="page">
+<article class="row main-content">
+    <div class="col-sm-offset-3 col-sm-6">
+        <div class="news-item">
+            <div class="title"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></div>
 
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
-  </div>
+            <div class="description">
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
 </article>
