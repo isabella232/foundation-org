@@ -1,3 +1,9 @@
+---
+image: /images/school-material.svg,
+title: Education,
+url: http://bankexfoundation.org/school
+---
+
 BANKEX Foundation Educational Program mainly consists of these series of educational courses: 
 
 * Basic Blockchain and Ethereum course

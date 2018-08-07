@@ -126,5 +126,105 @@ $(document).ready(function () {
 
        e.preventDefault();
     });
+
+    /***************************************/
+    /**************** CRUD *****************/
+    /***************************************/
+
+    function getContent(fileName, callback) {
+        var converter = new showdown.Converter();
+
+        $.ajax({
+                url: '/content',
+                type: 'get',
+                data: {
+                    fileName: fileName
+                },
+                dataType: 'html',
+                async: false,
+                success: function (data) {
+                    var result, options = {};
+                    var prop = data.match(/---[^)]*---/g)[0];
+
+                    prop = prop.replace(/---/g, '');
+
+                    prop.split(',').forEach(function (item) {
+                        var pair = item.split(':');
+                        var key = pair[0].trim();
+
+                        if (key === 'url') {
+                            options[key] = pair[1] + ':' + pair[2].trim();
+                        } else {
+                            options[key] = pair[1].trim();
+                        }
+                    });
+
+                    result = data.replace(/---[^)]*---/g, '');
+
+                    callback({
+                        result: converter.makeHtml(result),
+                        options: options
+                    });
+                }
+            }
+        );
+    }
+
+    function getFolders(folder, callback) {
+        $.ajax({
+                url: '/static/content/' + folder,
+                type: 'get',
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    var isFile, item, i, result = [];
+
+                    for (i = 0; i < data.length; i++) {
+                        item = data[i];
+                        isFile = /.md/.test(item);
+
+                        if (isFile) {
+                            result.push(item)
+                        }
+                    }
+
+                    callback(result);
+                }
+            }
+        );
+    }
+
+    function projects() {
+        getFolders('projects', function (projects) {
+            projects.forEach(function (item) {
+                $('#projects .items .row')
+                    .append('<div class="col-md-6 text-center animate" get-content="' + item + '">' +
+                        '<img><div class="heading"><a target="_blank"></a></div><div class="description"></div></div>');
+            });
+
+            $('#projects [get-content]').attr('get-content', function (i, val) {
+                if (val) {
+                    var $element = $(this);
+
+                    getContent('projects/' + val, function (res) {
+                        $element.find('.description').html(res.result);
+
+                        if (res.options.url) {
+                            $element.find('.heading a')
+                                .attr('href', res.options.url)
+                                .text(res.options.title);
+                        } else {
+                            $element.find('.heading').html(res.options.title);
+                        }
+
+                        $element.find('img').attr('src', res.options.image);
+                        $element.css('transition-delay', (i + 1) * 0.16 + 's');
+                    });
+                }
+            })
+        });
+    }
+
+    projects();
 });
 

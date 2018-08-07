@@ -3,6 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const nodemailer = require("nodemailer");
+var serveIndex = require('serve-index');
 
 // Init the app
 
@@ -15,6 +16,12 @@ app.use(favicon(path.join(__dirname, '/dist/images/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/static', express.static('views'), serveIndex('views', {
+    template: function (locals, callback) {
+        callback(null, JSON.stringify(locals.fileList));
+    }
+}));
+
 app.use(express.static(path.join(__dirname, 'blog/_site')));
 
 app.set('port', process.env.PORT || 8080);
@@ -26,6 +33,10 @@ app.get('/', (request, response) => {
 
 app.get('/alliance', (request, response) => {
     response.render('alliance');
+});
+
+app.get('/content', (request, response) => {
+    response.sendFile(path.resolve('views/content/' + request.query.fileName));
 });
 
 app.get('/blog', (request, response) => {

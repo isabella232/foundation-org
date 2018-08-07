@@ -58,21 +58,6 @@
       transition-duration: .5s;
     }
 
-    .row:first-child .col-md-6:first-child {
-      transition-delay: 0.16s;
-    }
-
-    .row:first-child .col-md-6:last-child {
-      transition-delay: 0.32s;
-    }
-
-    .row:last-child .col-md-6:first-child {
-      transition-delay: 0.48s;
-    }
-
-    .row:last-child .col-md-6:last-child {
-      transition-delay: 0.64s;
-    }
   }
 
 }
