@@ -84,52 +84,7 @@ module.exports = function (grunt) {
                         'dist/index.html': 'views/index.pug'
                     },
                     {
-                        'dist/agreement.html': 'views/agreement.pug'
-                    },
-                    {
-                        'dist/crowdsale.html': 'views/crowdsale.pug'
-                    },
-                    {
-                        'dist/dao.html': 'views/dao.pug'
-                    },
-                    {
-                        'dist/ether.html': 'views/ether.pug'
-                    },
-                    {
-                        'dist/cli.html': 'views/cli.pug'
-                    },
-                    {
-                        'dist/greeter.html': 'views/greeter.pug'
-                    },
-                    {
-                        'dist/assets.html': 'views/assets.pug'
-                    },
-                    {
-                        'dist/sale.html': 'views/sale.pug'
-                    },
-                    {
-                        'dist/token.html': 'views/token.pug'
-                    },
-                    {
-                        'dist/brand.html': 'views/brand.pug'
-                    },
-                    {
-                        'dist/foundation.html': 'views/foundation.pug'
-                    },
-                    {
-                        'dist/donate.html': 'views/donate.pug'
-                    },
-                    {
-                        'dist/devgrants.html': 'views/devgrants.pug'
-                    },
-                    {
-                        'dist/privacy-policy.html': 'views/privacy-policy.pug'
-                    },
-                    {
-                        'dist/cookie-policy.html': 'views/cookie-policy.pug'
-                    },
-                    {
-                        'dist/terms-of-use.html': 'views/terms-of-use.pug'
+                        'dist/alliance.html': 'views/alliance.pug'
                     }
                 ]
             }
@@ -286,7 +241,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'clean',
         'sass',
-        'pug',
         'copy',
         'cssmin',
         'concat:vendor',
@@ -295,7 +249,9 @@ module.exports = function (grunt) {
         'concat:js',
         'concat:css',
         'clean:cleanup_js',
-        'clean:cleanup_css'
+        'clean:cleanup_css',
+        'pug',
+
     ]);
     grunt.registerTask('build', 'default');
 };
