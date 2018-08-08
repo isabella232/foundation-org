@@ -1,5 +1,5 @@
 ---
-image: /images/molecule.svg,
+image: /images/molecule.svg
 title: Plasma Protocol
 ---
 

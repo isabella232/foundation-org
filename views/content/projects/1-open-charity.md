@@ -1,6 +1,6 @@
 ---
-image: /images/care.svg,
-title: Open Charity,
+image: /images/care.svg
+title: Open Charity
 url: https://opencharity.io
 ---
 

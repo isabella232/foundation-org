@@ -160,6 +160,9 @@ function showBalance(acc){
     /**************** CRUD *****************/
     /***************************************/
 
+    projects();
+    news();
+
     function getContent(fileName, callback) {
         var converter = new showdown.Converter();
 
@@ -177,7 +180,7 @@ function showBalance(acc){
 
                     prop = prop.replace(/---/g, '');
 
-                    prop.split(',').forEach(function (item) {
+                    prop.trim().split('\n').forEach(function (item) {
                         var pair = item.split(':');
                         var key = pair[0].trim();
 
@@ -254,6 +257,41 @@ function showBalance(acc){
         });
     }
 
-    projects();
+    function news() {
+        getFolders('news', function (news) {
+            var i = 1;
+
+            news.forEach(function (item) {
+                $('#news .row:last-child')
+                    .append('<div class="col-md-6 news-item" get-content="' + item + '"><a href=""><div class="wrapper">' +
+                        '<div class="bg-img"></div><div class="overlay"></div><div class="text">' +
+                        '<div class="content"><div class="title"></div><div class="description"></div></div>' +
+                        '<div class="btn-container"><div class="btn">Read more</div></div></div></div></a></div>');
+
+                if (i === 2) {
+                    $('#news .container').append('<div class="row"></div>');
+                } else {
+                    i = 1;
+                }
+
+                i++;
+            });
+
+            $('#news [get-content]').attr('get-content', function (i, val) {
+                if (val) {
+                    var $element = $(this);
+
+                    getContent('news/' + val, function (res) {
+                        $element.find('.description').html(res.result);
+
+                        $element.find('a').attr('href', res.options.url);
+                        $element.find('.title').html(res.options.title);
+                        $element.find('.bg-img').css('background-image', 'url(..' + res.options.image + ')');
+                    });
+                }
+            })
+        });
+    }
+
 });
 

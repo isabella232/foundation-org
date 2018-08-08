@@ -1,6 +1,6 @@
 ---
-image: /images/school-material.svg,
-title: Education,
+image: /images/school-material.svg
+title: Education
 url: http://bankexfoundation.org/school
 ---
 
