@@ -1,5 +1,5 @@
 ---
-image: /images/rocket.svg,
+image: /images/rocket.svg
 title: Coming Soon...
 ---
 
