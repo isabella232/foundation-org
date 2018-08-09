@@ -28,16 +28,6 @@ function showBalance(acc){
   });
 })()
 ;$(document).ready(function () {
-    $('.home-slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        prevArrow: $('.prev'),
-        nextArrow: $('.next'),
-    });
-
     animate();
     indicator();
     header();
@@ -160,9 +150,12 @@ function showBalance(acc){
     /**************** CRUD *****************/
     /***************************************/
 
-    projects();
-    news();
-    team();
+    setTimeout(function () {
+        projects();
+        news();
+        team();
+        home();
+    });
 
     function getContent(fileName, callback) {
         var converter = new showdown.Converter();
@@ -334,6 +327,47 @@ function showBalance(acc){
             })
         });
     }
+
+    function home() {
+        getFolders('home', function (team) {
+            team.forEach(function (item, i) {
+                $('.home-slider')
+                    .append('<div class="t-table"><div class="cell"><div class="container">' +
+                        '<div class="wrapper" get-content="' + item + '">' +
+                        '<div class="title"></div>' +
+                        '<div class="description"></div>' +
+                        '</div></div></div></div>');
+            });
+
+            $('.home-slider [get-content]').attr('get-content', function (i, val) {
+                if (val) {
+                    var $element = $(this);
+
+                    getContent('home/' + val, function (res) {
+                        $element.find('.description').html(res.result);
+                        $element.find('.title').html(res.options.title);
+
+                        if (res.options.url) {
+                            $element.append('<div><a href="' + res.options.url + '" target="_blank">Read More</a></div>');
+                        }
+                    });
+                }
+            });
+
+            $('.home-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                prevArrow: $('.prev'),
+                nextArrow: $('.next'),
+            });
+
+        });
+    }
+
+
 
 });
 
