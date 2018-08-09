@@ -150,15 +150,15 @@ function showBalance(acc){
     /**************** CRUD *****************/
     /***************************************/
 
-    setTimeout(function () {
-        projects();
-        news();
-        team();
-        home();
-    });
+    var converter = new showdown.Converter();
+
+    home();
+    about();
+    projects();
+    news();
+    team();
 
     function getContent(fileName, callback) {
-        var converter = new showdown.Converter();
 
         $.ajax({
                 url: '/content',
@@ -167,7 +167,7 @@ function showBalance(acc){
                     fileName: fileName
                 },
                 dataType: 'html',
-                async: false,
+                async: true,
                 success: function (data) {
                     var result, options = {};
 
@@ -202,7 +202,7 @@ function showBalance(acc){
                 url: '/static/content/' + folder,
                 type: 'get',
                 dataType: 'json',
-                async: false,
+                async: true,
                 success: function (data) {
                     var isFile, item, i, result = [];
 
@@ -367,7 +367,20 @@ function showBalance(acc){
         });
     }
 
+    function about() {
+        $('#about-us [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
 
+                getContent(val, function (res) {
+                    $element.find('.description').html(res.result);
+                    $element.find('.title').html(res.options.title);
+                    $element.find('.video').append('<iframe id="youtubeiframe44869237" width="100%" height="100%" ' +
+                        'src="//' + res.options.video + '" frameborder="0" allowfullscreen="" style="height: 540px;"></iframe>');
+                });
+            }
+        });
+    }
 
 });
 
