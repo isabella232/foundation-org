@@ -1,3 +1,7 @@
+---
+title: Join BANKEX Foundation Alliance
+---
+
 BANKEX Foundation aims to bring together a crypto-community that builds and develops effective open-source solutions in collaboration. We invite companies and enterprises that share our values and goals to participate, develop our technology and find new ways to apply it.
 
 &nbsp;

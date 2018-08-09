@@ -1,11 +1,10 @@
 #alliance.main-tutorial.intro
     .scrollme.introduction
         .bg
-            .container
-                .title Join BANKEX Foundation Alliance
+            .container(get-content='alliance.md')
+                .title
                 hr
                 .description
-                    include:markdown-it ../../content/alliance.md
                 a.page-scroll(href='#form', data-offset='65')
                     .text-center
                         .arrow-down.bounce

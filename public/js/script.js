@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     animate();
     indicator();
     header();
@@ -44,20 +45,6 @@ $(document).ready(function () {
 
         indicator.css('width', ((offset * 100) / documentHeight) + '%');
     }
-
-    $("#map").googleMap({
-        zoom: 15,
-        overviewMapControl: true,
-        streetViewControl: true,
-        scrollwheel: true,
-        mapTypeControl: true,
-        coords: [51.58731, 4.762877]
-    });
-    $("#map").addMarker({
-        coords: [51.58731, 4.762877], // GPS coords
-        title: 'BANKEX Foundation', // Link to redirect onclick (optional)
-        id: 'marker1' // Unique ID for your marker
-    });
 
     $('a.page-scroll').bind('click', function (event) {
         event.preventDefault();
@@ -114,7 +101,7 @@ $(document).ready(function () {
                 $(company).parent().addClass('error-input');
         }
 
-       e.preventDefault();
+        e.preventDefault();
     });
 
     /***************************************/
@@ -125,9 +112,13 @@ $(document).ready(function () {
 
     home();
     about();
+    structure();
     projects();
     news();
     team();
+    contact();
+    alliance();
+    error();
 
     function getContent(fileName, callback) {
         $.ajax({
@@ -299,8 +290,8 @@ $(document).ready(function () {
     }
 
     function home() {
-        getFolders('home', function (team) {
-            team.forEach(function (item, i) {
+        getFolders('home', function (home) {
+            home.forEach(function (item) {
                 $('.home-slider')
                     .append('<div class="t-table"><div class="cell"><div class="container">' +
                         '<div class="wrapper" get-content="' + item + '">' +
@@ -347,6 +338,76 @@ $(document).ready(function () {
                     $element.find('.title').html(res.options.title);
                     $element.find('.video').append('<iframe id="youtubeiframe44869237" width="100%" height="100%" ' +
                         'src="//' + res.options.video + '" frameborder="0" allowfullscreen="" style="height: 540px;"></iframe>');
+                });
+            }
+        });
+    }
+
+    function structure() {
+        $('#structure [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
+
+                getContent(val, function (res) {
+                    $element.find('.description').html(res.result);
+                    $element.find('.title').html(res.options.title);
+                });
+            }
+        });
+    }
+
+    function contact() {
+        $('#contact-us [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
+
+                getContent(val, function (res) {
+                    $element.find('.address').html(res.result);
+                    $element.find('.title').html(res.options.title);
+                    $element.find('.email').html('<a href="mailto:' + res.options.email + '">' + res.options.email + '</a>');
+
+                    var coords = res.options.coords.split(', ');
+
+                    $("#map").googleMap({
+                        zoom: 15,
+                        overviewMapControl: true,
+                        streetViewControl: true,
+                        scrollwheel: true,
+                        mapTypeControl: true,
+                        coords: coords
+                    });
+                    $("#map").addMarker({
+                        coords: coords, // GPS coords
+                        title: 'BANKEX Foundation', // Link to redirect onclick (optional)
+                        id: 'marker1' // Unique ID for your marker
+                    });
+
+                });
+            }
+        });
+    }
+
+    function alliance() {
+        $('#alliance [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
+
+                getContent(val, function (res) {
+                    $element.find('.description').html(res.result);
+                    $element.find('.title').html(res.options.title);
+                });
+            }
+        });
+    }
+
+    function error() {
+        $('.error [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
+
+                getContent(val, function (res) {
+                    $element.find('.description').html(res.result);
+                    $element.find('.title').html(res.options.title);
                 });
             }
         });
