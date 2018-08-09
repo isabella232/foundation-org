@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     animate();
     indicator();
     header();
@@ -125,6 +126,7 @@ $(document).ready(function () {
 
     home();
     about();
+    structure();
     projects();
     news();
     team();
@@ -347,6 +349,19 @@ $(document).ready(function () {
                     $element.find('.title').html(res.options.title);
                     $element.find('.video').append('<iframe id="youtubeiframe44869237" width="100%" height="100%" ' +
                         'src="//' + res.options.video + '" frameborder="0" allowfullscreen="" style="height: 540px;"></iframe>');
+                });
+            }
+        });
+    }
+
+    function structure() {
+        $('#structure [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
+
+                getContent(val, function (res) {
+                    $element.find('.description').html(res.result);
+                    $element.find('.title').html(res.options.title);
                 });
             }
         });
