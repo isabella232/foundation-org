@@ -75,20 +75,6 @@ function showBalance(acc){
         indicator.css('width', ((offset * 100) / documentHeight) + '%');
     }
 
-    $("#map").googleMap({
-        zoom: 15,
-        overviewMapControl: true,
-        streetViewControl: true,
-        scrollwheel: true,
-        mapTypeControl: true,
-        coords: [51.58731, 4.762877]
-    });
-    $("#map").addMarker({
-        coords: [51.58731, 4.762877], // GPS coords
-        title: 'BANKEX Foundation', // Link to redirect onclick (optional)
-        id: 'marker1' // Unique ID for your marker
-    });
-
     $('a.page-scroll').bind('click', function (event) {
         event.preventDefault();
 
@@ -144,7 +130,7 @@ function showBalance(acc){
                 $(company).parent().addClass('error-input');
         }
 
-       e.preventDefault();
+        e.preventDefault();
     });
 
     /***************************************/
@@ -159,6 +145,9 @@ function showBalance(acc){
     projects();
     news();
     team();
+    contact();
+    alliance();
+    error();
 
     function getContent(fileName, callback) {
         $.ajax({
@@ -330,8 +319,8 @@ function showBalance(acc){
     }
 
     function home() {
-        getFolders('home', function (team) {
-            team.forEach(function (item, i) {
+        getFolders('home', function (home) {
+            home.forEach(function (item) {
                 $('.home-slider')
                     .append('<div class="t-table"><div class="cell"><div class="container">' +
                         '<div class="wrapper" get-content="' + item + '">' +
@@ -385,6 +374,63 @@ function showBalance(acc){
 
     function structure() {
         $('#structure [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
+
+                getContent(val, function (res) {
+                    $element.find('.description').html(res.result);
+                    $element.find('.title').html(res.options.title);
+                });
+            }
+        });
+    }
+
+    function contact() {
+        $('#contact-us [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
+
+                getContent(val, function (res) {
+                    $element.find('.address').html(res.result);
+                    $element.find('.title').html(res.options.title);
+                    $element.find('.email').html('<a href="mailto:' + res.options.email + '">' + res.options.email + '</a>');
+
+                    var coords = res.options.coords.split(', ');
+
+                    $("#map").googleMap({
+                        zoom: 15,
+                        overviewMapControl: true,
+                        streetViewControl: true,
+                        scrollwheel: true,
+                        mapTypeControl: true,
+                        coords: coords
+                    });
+                    $("#map").addMarker({
+                        coords: coords, // GPS coords
+                        title: 'BANKEX Foundation', // Link to redirect onclick (optional)
+                        id: 'marker1' // Unique ID for your marker
+                    });
+
+                });
+            }
+        });
+    }
+
+    function alliance() {
+        $('#alliance [get-content]').attr('get-content', function (i, val) {
+            if (val) {
+                var $element = $(this);
+
+                getContent(val, function (res) {
+                    $element.find('.description').html(res.result);
+                    $element.find('.title').html(res.options.title);
+                });
+            }
+        });
+    }
+
+    function error() {
+        $('.error [get-content]').attr('get-content', function (i, val) {
             if (val) {
                 var $element = $(this);
 
