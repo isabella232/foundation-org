@@ -162,6 +162,7 @@ function showBalance(acc){
 
     projects();
     news();
+    team();
 
     function getContent(fileName, callback) {
         var converter = new showdown.Converter();
@@ -176,7 +177,8 @@ function showBalance(acc){
                 async: false,
                 success: function (data) {
                     var result, options = {};
-                    var prop = data.match(/---[^)]*---/g)[0];
+
+                    var prop = data.match(/---[^]*---/g)[0];
 
                     prop = prop.replace(/---/g, '');
 
@@ -191,7 +193,7 @@ function showBalance(acc){
                         }
                     });
 
-                    result = data.replace(/---[^)]*---/g, '');
+                    result = data.replace(/---[^]*---/g, '');
 
                     callback({
                         result: converter.makeHtml(result),
@@ -270,7 +272,6 @@ function showBalance(acc){
 
                 if (i === 2) {
                     $('#news .container').append('<div class="row"></div>');
-                } else {
                     i = 1;
                 }
 
@@ -287,6 +288,47 @@ function showBalance(acc){
                         $element.find('a').attr('href', res.options.url);
                         $element.find('.title').html(res.options.title);
                         $element.find('.bg-img').css('background-image', 'url(..' + res.options.image + ')');
+                    });
+                }
+            })
+        });
+    }
+
+    function team() {
+        getFolders('team', function (team) {
+            var i = 1, j = 1;
+
+            team.forEach(function (item) {
+                $('#team .row:last-child')
+                    .append('<div class="col-md-4 col-xs-6 animate" get-content="' + item + '"><div class="team-item">' +
+                        '<div class="image"></div><div class="name"></div><div class="desc"></div><div class="line"></div>' +
+                        '<div class="list"></div></div></div>');
+
+                if (i === 2) {
+                    $('#team .row:last-child').append('<div class="clearfix visible-xs visible-sm visible-md"></div>');
+                    i = 0;
+                }
+
+                if (j === 3) {
+                    $('#team .row:last-child').append('<div class="clearfix visible-lg"></div>');
+                    j = 0;
+                }
+
+                i++;
+                j++;
+            });
+
+            $('#team [get-content]').attr('get-content', function (i, val) {
+                if (val) {
+                    var $element = $(this);
+
+                    getContent('team/' + val, function (res) {
+                        $element.find('.list').html(res.result);
+
+                        $element.find('.name').html(res.options.title);
+                        $element.find('.desc').html(res.options.description);
+                        $element.find('.image').css('background-image', 'url(..' + res.options.image + ')');
+                        $element.css('transition-delay', (i + 1) * 0.16 + 's');
                     });
                 }
             })
