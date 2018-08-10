@@ -1,3 +1,13 @@
 #about-us  {
   background-color: #eee;
+
+  iframe {
+    height: 500px;
+  }
+
+  @media screen and (max-width: 640px) {
+    iframe, .video {
+      height: auto;
+    }
+  }
 }

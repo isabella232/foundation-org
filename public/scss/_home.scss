@@ -11,6 +11,18 @@ div.scrollme {
     min-height: 440px;
     background: #102026 url('../images/introduction.jpg') center center no-repeat;
     background-size: cover;
+
+    @media screen and (max-width: 1200px) {
+      .title {
+        font-size: 44px !important;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .title {
+        font-size: 30px !important;
+      }
+    }
   }
 }
 

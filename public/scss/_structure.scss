@@ -1,4 +1,6 @@
 #structure {
+  overflow: hidden;
+
   .title {
     font-size: 62px;
     margin-bottom: 45px;
@@ -47,11 +49,19 @@
   #structure .description {
     font-size: 22px;
   }
+
+  #structure .title {
+    font-size: 60px;
+  }
 }
 
 @media screen and (max-width: 640px) {
   #structure .description {
     font-size: 20px;
     margin-bottom: 5em;
+  }
+
+  #structure .title {
+    font-size: 30px;
   }
 }
