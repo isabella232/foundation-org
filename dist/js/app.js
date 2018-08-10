@@ -279,16 +279,21 @@ function showBalance(acc){
 
     function team() {
         getFolders('team', function (team) {
-            var i = 1, j = 1;
+            var i = 1, j = 1, k = 1;
 
             team.forEach(function (item) {
                 $('#team .row:last-child')
-                    .append('<div class="col-md-4 col-xs-6 animate" get-content="' + item + '"><div class="team-item">' +
+                    .append('<div class="col-md-4 col-sm-6 col-xs-12 animate" get-content="' + item + '"><div class="team-item">' +
                         '<div class="image"></div><div class="name"></div><div class="desc"></div><div class="line"></div>' +
                         '<div class="list"></div></div></div>');
 
+                if (k === 1) {
+                    $('#team .row:last-child').append('<div class="clearfix visible-xs"></div>');
+                    k = 0;
+                }
+
                 if (i === 2) {
-                    $('#team .row:last-child').append('<div class="clearfix visible-xs visible-sm visible-md"></div>');
+                    $('#team .row:last-child').append('<div class="clearfix visible-sm visible-md"></div>');
                     i = 0;
                 }
 
@@ -299,6 +304,7 @@ function showBalance(acc){
 
                 i++;
                 j++;
+                k++;
             });
 
             $('#team [get-content]').attr('get-content', function (i, val) {
@@ -365,8 +371,8 @@ function showBalance(acc){
                 getContent(val, function (res) {
                     $element.find('.description').html(res.result);
                     $element.find('.title').html(res.options.title);
-                    $element.find('.video').append('<iframe id="youtubeiframe44869237" width="100%" height="100%" ' +
-                        'src="//' + res.options.video + '" frameborder="0" allowfullscreen="" style="height: 540px;"></iframe>');
+                    $element.find('.video').append('<iframe id="youtubeiframe44869237" width="100%"' +
+                        'src="//' + res.options.video + '" frameborder="0" allowfullscreen="" ></iframe>');
                 });
             }
         });

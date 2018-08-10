@@ -1,5 +1,6 @@
 #projects {
   padding-top: 0;
+  overflow: hidden;
 
   .title {
     margin-top: 2em;
@@ -74,10 +75,19 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  #projects {
+    .title {
+      font-size: 38px;
+    }
+  }
+}
+
 @media screen and (max-width: 640px) {
   #projects {
     .title {
       margin-bottom: 0.4em;
+      font-size: 30px;
     }
 
     .heading {
@@ -91,3 +101,4 @@
     }
   }
 }
+
